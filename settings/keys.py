@@ -83,10 +83,6 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Terminal
     ([mod], "Return", lazy.spawn(terminal)),
 
-    # Redshift
-    ([mod], "r", lazy.spawn("redshift -O 2400")),
-    ([mod, "shift"], "r", lazy.spawn("redshift -x")),
-
     # Screenshot
    ([mod], "s", lazy.spawn(f"scrot {home}/Pictures/pantallasos/%Y-%m-%d-%H%M%S.png -e 'xclip -selection clipboard -t image/png -i $f && notify-send \"Captura de pantalla\" \"Guardada en {home}/Pictures/pantallasos y copiada al portapapeles\"'")),
     
