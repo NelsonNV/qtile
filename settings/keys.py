@@ -13,28 +13,28 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
 
     # Switch between windows in current stack pane
-    ([mod], "k", lazy.layout.down()),
-    ([mod], "i", lazy.layout.up()),
-    ([mod], "j", lazy.layout.left()),
+    ([mod], "j", lazy.layout.down()),
+    ([mod], "k", lazy.layout.up()),
+    ([mod], "h", lazy.layout.left()),
     ([mod], "l", lazy.layout.right()),
 
     # Change window sizes (MonadTall)
-    ([mod, "shift"], "j", lazy.layout.grow()),
+    ([mod, "shift"], "h", lazy.layout.grow()),
     ([mod, "shift"], "l", lazy.layout.shrink()),
     #BSP control de ventana
-    ([mod, "shift"], "k", lazy.layout.shuffle_down()),
-    ([mod, "shift"], "i", lazy.layout.shuffle_up()),
-    ([mod, "shift"], "j", lazy.layout.shuffle_left()),
+    ([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    ([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    ([mod, "shift"], "h", lazy.layout.shuffle_left()),
     ([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
-    ([mod, "mod1"], "k", lazy.layout.flip_down()),
-    ([mod, "mod1"], "i", lazy.layout.flip_up()),
-    ([mod, "mod1"], "j", lazy.layout.flip_left()),
-    ([mod, "mod1"], "l", lazy.layout.flip_right()),
+    ([mod, "mod1"], "j", lazy.layout.flip_down()),
+    ([mod, "mod1"], "k", lazy.layout.flip_up()),
+    ([mod, "mod1"], "l", lazy.layout.flip_left()),
+    ([mod, "mod1"], "h", lazy.layout.flip_right()),
     
-    ([mod, "control"], "k", lazy.layout.grow_down()),
-    ([mod, "control"], "i", lazy.layout.grow_up()),
-    ([mod, "control"], "j", lazy.layout.grow_left()),
+    ([mod, "control"], "j", lazy.layout.grow_down()),
+    ([mod, "control"], "k", lazy.layout.grow_up()),
+    ([mod, "control"], "h", lazy.layout.grow_left()),
     ([mod, "control"], "l", lazy.layout.grow_right()),
     # Toggle floating
     ([mod], "space", lazy.window.toggle_floating()),
@@ -43,8 +43,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "f", lazy.window.toggle_fullscreen()),
 
     # Move windows up or down in current stack
-    ([mod, "shift"], "k", lazy.layout.shuffle_down()),
-    ([mod, "shift"], "i", lazy.layout.shuffle_up()),
+    ([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    ([mod, "shift"], "k", lazy.layout.shuffle_up()),
 
     # Toggle between different layouts as defined below
     ([mod], "Tab", lazy.next_layout()),
