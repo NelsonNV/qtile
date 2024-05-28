@@ -112,12 +112,10 @@ secondary_widgets = [
 
     powerline('color4', 'dark'),
 
-   # widget.Image(filename=f"{home}/.config/qtile/imagen/cpu.png",**base(bg="color4")),
    widget.CPU(format="  {freq_current}GHz {load_percent}%",**base(bg='color4')),#icon: nf-oct-cpu
    
     powerline('color3', 'color4'),
 
-    #widget.Image(filename=f"{home}/.config/qtile/imagen/ram.png",**base(bg="color3")),
     widget.Memory( measure_mem='G',format="  {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm} " , **base(bg='color3')), # icon:nf-fa-memory
 
     powerline('color1', 'color3' ),
@@ -128,7 +126,6 @@ secondary_widgets = [
 
     powerline('color2', 'color1'),
     
-    # widget.Image(filename=f"{home}/.config/qtile/imagen/nvidia.png",**base(bg="color2")),
     widget.NvidiaSensors(**base(bg='color2'),format=' {temp} '),
  
     powerline('color1', 'color2'),
