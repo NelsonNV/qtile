@@ -4,10 +4,12 @@ from libqtile.config import Key
 from libqtile.command import lazy
 
 
-mod = "mod4"
+mod = "mod4" #win
+alt = "mod1"
 terminal = "kitty -o background_opacity=0.65"
 home = os.path.expanduser("~")
 browser = "brave"
+keepass = "keepassxc"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -60,13 +62,16 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Restart Qtile
     ([mod, "control"], "r", lazy.restart()),
 
-    ([mod, "control"], "q", lazy.shutdown()),
+    ([mod, "control"], "q", lazy.spawn(f"i3lock -t -f -i {home}/.config/wallpaper/lock.png" )),
     ([mod, "shift"], "r", lazy.spawncmd()),
 
     # ------------ App Configs ------------
 
     # Menu
     ([mod], "d", lazy.spawn("rofi -show drun -show-icons")),
+    # keepass
+    
+    (['control',alt ], "k", lazy.spawn(keepass)),
 
     #powermenu
     ([mod], "x", lazy.spawn(f"{home}/.config/rofi/bin/applet_powermenu")),
@@ -79,6 +84,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # File Explorer
     ([mod], "e", lazy.spawn(f"{terminal} -e ranger")),
+    ([mod,"shift"], "e", lazy.spawn("thunar")),
 
     # Terminal
     ([mod], "Return", lazy.spawn(terminal)),
