@@ -1,6 +1,7 @@
 from libqtile import layout
 from libqtile.config import Match
 from .theme import colors
+from .keys import keepass
 
 layout_conf = {
     'border_focus': colors['focus'][0],
@@ -29,6 +30,8 @@ floating_layout = layout.Floating(
         Match(wm_class='makebranch'),
         Match(wm_class='maketag'),
         Match(wm_class='ssh-askpass'),
+        Match(wm_class='kmix'),
+        Match(wm_class=keepass),
         Match(title='branchdialog'),
         Match(title='pinentry'),
     ],
