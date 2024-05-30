@@ -88,19 +88,19 @@ primary_widgets = [
 
     widget.Net(**base(bg='color3')),
 
-    powerline('color2', 'color3'),
+    powerline('color1', 'color3'),
 
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+    widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
 
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
+    widget.CurrentLayout(**base(bg='color1',fg="light"), padding=5),
 
-    powerline('color1', 'color2'),
+    powerline('color2', 'color1'),
 
-    icon(bg="color1", fontsize=17, text='󰃰 '), # Icon: nf-md-calendar_clock
+    icon(bg="color2", fontsize=17, text='󰃰 '), # Icon: nf-md-calendar_clock
 
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
+    widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
 
-    powerline('color3', 'color1'),
+    powerline('color3', 'color2'),
 
     widget.Systray(background=colors['color3'], padding=5),
 ]
@@ -112,11 +112,11 @@ secondary_widgets = [
 
     powerline('color4', 'dark'),
 
-   widget.CPU(format="  {freq_current}GHz {load_percent}%",**base(bg='color4')),#icon: nf-oct-cpu
+   widget.CPU(format=" {freq_current}GHz {load_percent}%",**base(bg='color4')),#icon: nf-oct-cpu
    
     powerline('color3', 'color4'),
 
-    widget.Memory( measure_mem='G',format="  {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm} " , **base(bg='color3')), # icon:nf-fa-memory
+    widget.Memory( measure_mem='M',format=" {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm} " , **base(bg='color3')), # icon:nf-fa-memory
 
     powerline('color1', 'color3' ),
 
@@ -135,7 +135,10 @@ secondary_widgets = [
     powerline('grey', 'color1'),
     widget.Net(**base( fg='light' ,bg='grey')),
     
-    #powerline('light', 'grey'),
+    powerline('color4', 'grey'),
+    widget.Cmus(**base( fg='dark',bg="color4"),format="{play_icon}{artist} - {title}",
+                play_color= colors['color1'],
+                noplay_color=colors['dark']), 
 ]
 
 widget_defaults = {
