@@ -62,7 +62,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Restart Qtile
     ([mod, "control"], "r", lazy.restart()),
 
-    ([mod, "control"], "q", lazy.spawn(f"i3lock -t -f -i {home}/.config/wallpaper/lock.png" )),
+    ([mod, "control"], "q", lazy.spawn(f"i3lock -t -f -i '{home}/.config/qtile/wallpaper/lock.png'" )),
     ([mod, "shift"], "r", lazy.spawncmd()),
 
     # ------------ App Configs ------------
