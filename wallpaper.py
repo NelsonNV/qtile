@@ -11,6 +11,11 @@ def fondorandom():
         fondos.remove('.git')
     except:
         pass
+
+    try:
+        fondos.remove('lock.png')
+    except:
+        pass
     random.shuffle(fondos)
     os.system(f"feh --no-fehbg --bg-scale { direccion }/{ fondos[ random.randrange( 0 , len(fondos) ) ] }")
 
